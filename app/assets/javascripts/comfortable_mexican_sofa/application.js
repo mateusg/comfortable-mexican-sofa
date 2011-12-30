@@ -3,10 +3,6 @@
 //= require comfortable_mexican_sofa/jquery_ui_timepicker.js
 //= require comfortable_mexican_sofa/rails.js
 //= require comfortable_mexican_sofa/codemirror/codemirror.js
-//= require comfortable_mexican_sofa/elrte/elrte.js
-//= require comfortable_mexican_sofa/elrte/elrte.codemirror.js
-//= require comfortable_mexican_sofa/elrte/elrte.sofa_link.js
-//= require comfortable_mexican_sofa/elrte/elrte.sofa_image.js
 
 $.CMS = function(){
   
@@ -32,12 +28,12 @@ $.CMS = function(){
     
     // Configuration that can be overriden from the outside. For example:
     //   $.CMS.config.elRTE.toolbar = ['undoredo']
-    config: {
-      'elRTE': {
-        toolbar: ['undoredo', 'sofa_format', 'sofa_style', 'sofa_alignment', 'lists', 'sofa_copypaste', 'sofa_image', 'sofa_links']
-      }
-    },
-
+    // config: {
+    //       'elRTE': {
+    //         toolbar: ['undoredo', 'sofa_format', 'sofa_style', 'sofa_alignment', 'lists', 'sofa_copypaste', 'sofa_image', 'sofa_links']
+    //       }
+    //     },
+    
     enable_sortable_list: function(){
       $('.sortable, ul.sortable ul').sortable({
         handle: '.dragger',
@@ -88,19 +84,19 @@ $.CMS = function(){
     },
     
     enable_rich_text: function(){
-      elRTE.prototype.options.panels.sofa_style     = ['bold', 'italic', 'underline'];
-      elRTE.prototype.options.panels.sofa_alignment = ['justifyleft', 'justifycenter', 'justifyright'];
-      elRTE.prototype.options.panels.sofa_format    = ['formatblock'];
-      elRTE.prototype.options.panels.sofa_copypaste = ['pasteformattext'];
-      elRTE.prototype.options.panels.sofa_links     = ['sofa_link', 'unlink'];
-      
-      elRTE.prototype.options.toolbars.sofa = $.CMS.config.elRTE.toolbar;
-      
-      $('textarea.rich_text').elrte({
-        height:       300,
-        toolbar:      'sofa',
-        styleWithCSS: false
-      });
+      // elRTE.prototype.options.panels.sofa_style     = ['bold', 'italic', 'underline'];
+      //       elRTE.prototype.options.panels.sofa_alignment = ['justifyleft', 'justifycenter', 'justifyright'];
+      //       elRTE.prototype.options.panels.sofa_format    = ['formatblock'];
+      //       elRTE.prototype.options.panels.sofa_copypaste = ['pasteformattext'];
+      //       elRTE.prototype.options.panels.sofa_links     = ['sofa_link', 'unlink'];
+      //       
+      //       elRTE.prototype.options.toolbars.sofa = $.CMS.config.elRTE.toolbar;
+      //       
+      //       $('textarea.rich_text').elrte({
+      //         height:       300,
+      //         toolbar:      'sofa',
+      //         styleWithCSS: false
+      //       });
     },
     
     enable_codemirror: function(){
