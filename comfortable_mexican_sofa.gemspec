@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "comfortable_mexican_sofa"
-  s.version = "1.6.2"
+  s.version = "1.6.2ck"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Oleg Khabarov", "The Working Group Inc"]
@@ -26,30 +26,6 @@ Gem::Specification.new do |s|
     "app/assets/images/comfortable_mexican_sofa/arrow_bottom.gif",
     "app/assets/images/comfortable_mexican_sofa/arrow_right.gif",
     "app/assets/images/comfortable_mexican_sofa/checkerboard.gif",
-    "app/assets/images/comfortable_mexican_sofa/elrte/elrte-toolbar.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/google-maps.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/iframe.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/media-director.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/media-flash.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/media-quicktime.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/media-realaudio.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/media-rutube.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/media-vimeo.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/media-winmedia.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/media-youtube.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/outline-div.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/outline-p.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/pagebreak.gif",
-    "app/assets/images/comfortable_mexican_sofa/elrte/pixel.gif",
-    "app/assets/images/comfortable_mexican_sofa/elrte/smileys/evilgrin.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/smileys/grin.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/smileys/happy.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/smileys/smile.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/smileys/surprised.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/smileys/tongue.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/smileys/unhappy.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/smileys/waii.png",
-    "app/assets/images/comfortable_mexican_sofa/elrte/smileys/wink.png",
     "app/assets/images/comfortable_mexican_sofa/icon_layout.gif",
     "app/assets/images/comfortable_mexican_sofa/icon_move.gif",
     "app/assets/images/comfortable_mexican_sofa/icon_regular.gif",
@@ -71,10 +47,6 @@ Gem::Specification.new do |s|
     "app/assets/images/comfortable_mexican_sofa/x.png",
     "app/assets/javascripts/comfortable_mexican_sofa/application.js",
     "app/assets/javascripts/comfortable_mexican_sofa/codemirror/codemirror.js",
-    "app/assets/javascripts/comfortable_mexican_sofa/elrte/elrte.codemirror.js",
-    "app/assets/javascripts/comfortable_mexican_sofa/elrte/elrte.js",
-    "app/assets/javascripts/comfortable_mexican_sofa/elrte/elrte.sofa_image.js",
-    "app/assets/javascripts/comfortable_mexican_sofa/elrte/elrte.sofa_link.js",
     "app/assets/javascripts/comfortable_mexican_sofa/jquery.js",
     "app/assets/javascripts/comfortable_mexican_sofa/jquery_ui.js",
     "app/assets/javascripts/comfortable_mexican_sofa/jquery_ui_timepicker.js",
@@ -83,7 +55,6 @@ Gem::Specification.new do |s|
     "app/assets/stylesheets/comfortable_mexican_sofa/codemirror.css",
     "app/assets/stylesheets/comfortable_mexican_sofa/content.css",
     "app/assets/stylesheets/comfortable_mexican_sofa/dialogs.css",
-    "app/assets/stylesheets/comfortable_mexican_sofa/elrte.css",
     "app/assets/stylesheets/comfortable_mexican_sofa/files.css",
     "app/assets/stylesheets/comfortable_mexican_sofa/form.css",
     "app/assets/stylesheets/comfortable_mexican_sofa/jquery_ui.css",
