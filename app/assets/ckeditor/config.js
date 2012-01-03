@@ -5,7 +5,15 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 CKEDITOR.editorConfig = function( config )
 {
-	// Define changes to default configuration here. For example:
-	config.language = 'pt-br';
-	// config.uiColor = '#AADC6E';
+  // For more information on how to customize the toolbar, see http://docs.cksource.com/CKEditor_3.x/Developers_Guide/Toolbar
+	config.toolbar_SofaConfig =
+  [
+      { name: 'clipboard',   items : [ 'Undo','Redo' ] },
+      { name: 'styles',      items : [ 'Format' ] },
+      { name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike' ] },
+      { name: 'colors',      items : [ 'TextColor','BGColor','RemoveFormat' ] },
+      { name: 'paragraph',   items : [ 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','Outdent','Indent','-','NumberedList','BulletedList'  ] },
+      { name: 'links',       items : [ 'Link','Unlink', '-', 'Image','Table', '-', 'PasteFromWord' ] }
+  ];
+	config.toolbar = 'SofaConfig';
 };
