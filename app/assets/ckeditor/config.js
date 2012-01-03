@@ -9,11 +9,10 @@ CKEDITOR.editorConfig = function( config )
 	config.toolbar_SofaConfig =
   [
       { name: 'clipboard',   items : [ 'Undo','Redo' ] },
-      { name: 'styles',      items : [ 'Format' ] },
-      { name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike' ] },
+      { name: 'styles', items : [ 'Format', 'Bold','Italic','Underline','Strike' ] },
       { name: 'colors',      items : [ 'TextColor','BGColor','RemoveFormat' ] },
       { name: 'paragraph',   items : [ 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','Outdent','Indent','-','NumberedList','BulletedList'  ] },
-      { name: 'links',       items : [ 'Link','Unlink', '-', 'Image','Table', '-', 'PasteFromWord' ] }
+      { name: 'insertitems',       items : [ 'Link','Unlink', '-', 'Image','Table', '-', 'PasteFromWord' ] }
   ];
 	config.toolbar = 'SofaConfig';
 };
