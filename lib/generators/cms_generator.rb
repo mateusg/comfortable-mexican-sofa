@@ -32,7 +32,6 @@ class CmsGenerator < Rails::Generators::Base
       'public/stylesheets/comfortable_mexican_sofa/content.css', 
       'public/stylesheets/comfortable_mexican_sofa/widgets.css',
       'public/stylesheets/comfortable_mexican_sofa/jquery_ui.css',
-      'public/stylesheets/comfortable_mexican_sofa/elrte.css',
       'public/stylesheets/comfortable_mexican_sofa/files.css'
     ]
     
