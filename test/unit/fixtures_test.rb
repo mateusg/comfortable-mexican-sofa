@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require File.expand_path('../test_helper', File.dirname(__FILE__))
 
 class FixturesTest < ActiveSupport::TestCase
@@ -88,7 +90,7 @@ class FixturesTest < ActiveSupport::TestCase
       assert page = Cms::Page.find_by_full_path('/')
       assert_equal layout, page.layout
       assert_equal 'index', page.slug
-      assert_equal "<html>Home Page Fixture Content\ndefault_snippet_content</html>", page.content
+      assert_equal "<html>Home Page Fixture Contént\ndefault_snippet_content</html>", page.content
       assert page.is_published?
       
       assert child_page = Cms::Page.find_by_full_path('/child')
@@ -201,6 +203,20 @@ class FixturesTest < ActiveSupport::TestCase
       assert_difference 'Cms::Page.count', 2 do
         assert_difference 'Cms::Snippet.count', 1 do
           ComfortableMexicanSofa::Fixtures.import_all('test.host', 'example.com')
+        end
+      end
+    end
+  end
+  
+  def test_import_all_with_no_site
+    cms_sites(:default).destroy
+    
+    assert_difference 'Cms::Site.count', 1 do
+      assert_difference 'Cms::Layout.count', 2 do
+        assert_difference 'Cms::Page.count', 2 do
+          assert_difference 'Cms::Snippet.count', 1 do
+            ComfortableMexicanSofa::Fixtures.import_all('test.host', 'example.com')
+          end
         end
       end
     end
