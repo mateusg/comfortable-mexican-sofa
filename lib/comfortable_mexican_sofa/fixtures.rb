@@ -15,7 +15,7 @@ module ComfortableMexicanSofa::Fixtures
   def self.import_layouts(to_hostname, from_hostname = nil, path = nil, root = true, parent = nil, layout_ids = [])
     site = Cms::Site.find_or_create_by_hostname(to_hostname)
     unless path ||= find_fixtures_path((from_hostname || to_hostname), 'layouts')
-      $stderr.puts 'Cannot find fixtures'
+      $stdout.puts 'Cannot find Layout fixtures'
       return
     end
     
@@ -55,8 +55,11 @@ module ComfortableMexicanSofa::Fixtures
       # saving
       layout.parent = parent
       if layout.changed?
-        layout.save!
-        Rails.logger.debug "[Fixtures] Saved Layout {#{layout.identifier}}"
+        if layout.save
+          $stdout.puts "[Fixtures] Saved Layout {#{layout.identifier}}"
+        else
+          $stdout.puts "[Fixtures] Failed to save Layout {#{layout.errors.inspect}}"
+        end
       end
       layout_ids << layout.id
       
@@ -77,7 +80,7 @@ module ComfortableMexicanSofa::Fixtures
   def self.import_pages(to_hostname, from_hostname = nil, path = nil, root = true, parent = nil, page_ids = [])
     site = Cms::Site.find_or_create_by_hostname(to_hostname)
     unless path ||= find_fixtures_path((from_hostname || to_hostname), 'pages')
-      $stderr.puts 'Cannot find fixtures'
+      $stdout.puts 'Cannot find Page fixtures'
       return
     end
     
@@ -118,8 +121,11 @@ module ComfortableMexicanSofa::Fixtures
       # saving
       page.blocks_attributes = blocks_attributes if blocks_attributes.present?
       if page.changed? || blocks_attributes.present?
-        page.save! 
-        Rails.logger.debug "[Fixtures] Saved Page {#{page.full_path}}"
+        if page.save
+          $stdout.puts "[Fixtures] Saved Page {#{page.full_path}}"
+        else
+          $stdout.puts "[Fixtures] Failed to save Page {#{page.errors.inspect}}"
+        end
       end
       page_ids << page.id
       
@@ -140,7 +146,7 @@ module ComfortableMexicanSofa::Fixtures
   def self.import_snippets(to_hostname, from_hostname = nil)
     site = Cms::Site.find_or_create_by_hostname(to_hostname)
     unless path = find_fixtures_path((from_hostname || to_hostname), 'snippets')
-      $stdout.puts 'Cannot find fixtures'
+      $stdout.puts 'Cannot find Snippet fixtures'
       return
     end
     
@@ -168,8 +174,11 @@ module ComfortableMexicanSofa::Fixtures
       
       # saving
       if snippet.changed?
-        snippet.save!
-        Rails.logger.debug "[Fixtures] Saved Snippet {#{snippet.identifier}}"
+        if snippet.save
+          $stdout.puts "[Fixtures] Saved Snippet {#{snippet.identifier}}"
+        else
+          $stdout.puts "[Fixtures] Failed to save Snippet {#{snippet.errors.inspect}}"
+        end
       end
       snippet_ids << snippet.id
     end
