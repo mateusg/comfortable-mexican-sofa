@@ -34,7 +34,7 @@ class ActiveSupport::TestCase
       config.enable_fixtures      = false
       config.fixtures_path        = File.expand_path('db/cms_fixtures', Rails.root)
       config.revisions_limit      = 25
-      config.locales              = { :en => 'English', :es => 'Español' }
+      config.locales              = { :en => 'English', :es => 'Español', 'pt-BR' => 'Português Brasileiro' }
       config.admin_locale         = nil
       config.upload_file_options  = { }
     end
