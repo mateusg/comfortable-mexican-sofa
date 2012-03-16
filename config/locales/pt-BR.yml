@@ -97,7 +97,7 @@ pt-BR:
   # -- Views ----------------------------------------------------------------
   cms_admin:
     base:
-      sites: Sites
+      sites: Site
       layouts: Leiautes
       pages: Páginas
       snippets: Fragmentos

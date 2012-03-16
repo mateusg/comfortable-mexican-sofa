@@ -7,8 +7,14 @@ class CmsAdmin::SitesController < CmsAdmin::BaseController
   before_filter :load_site,   :only => [:edit, :update, :destroy]
 
   def index
-    return redirect_to :action => :new if Cms::Site.count == 0
-    @sites = Cms::Site.all
+    # return redirect_to :action => :new if Cms::Site.count == 0
+    #     @sites = Cms::Site.all
+    if Cms::Site.count == 0
+      redirect_to :action => :new
+    else
+      @site = Cms::Site.first
+      redirect_to :action => :edit, :id => @site.id 
+    end
   end
 
   def new
