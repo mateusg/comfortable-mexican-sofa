@@ -2,7 +2,7 @@ class ComfortableMexicanSofa::FormBuilder < ActionView::Helpers::FormBuilder
   
   helpers = field_helpers -
     %w(hidden_field fields_for) +
-    %w(select)
+    %w(select collection_select)
     
   helpers.each do |name|
     class_eval %Q^
@@ -35,7 +35,7 @@ class ComfortableMexicanSofa::FormBuilder < ActionView::Helpers::FormBuilder
   def simple_field(label = nil, content = nil, options = {}, &block)
     content ||= @template.capture(&block) if block_given?
     %(
-      <div class='form_element #{options.delete(:class)}'>
+      <div class='form_element simple_field #{options.delete(:class)}'>
         <div class='label'>#{label}</div>
         <div class='value'>#{content}</div>
       </div>
@@ -43,7 +43,7 @@ class ComfortableMexicanSofa::FormBuilder < ActionView::Helpers::FormBuilder
   end
   
   def label_for(field, options={})
-    label = options.delete(:label) || object.class.human_attribute_name(field).capitalize
+    label = options.delete(:label) || object.class.human_attribute_name(field)
     for_value = options[:id] || "#{object_name}_#{field}"
     %Q{<label for="#{for_value}">#{label}</label>}.html_safe
   end
@@ -57,7 +57,7 @@ class ComfortableMexicanSofa::FormBuilder < ActionView::Helpers::FormBuilder
   # -- Tag Field Fields -----------------------------------------------------
   def default_tag_field(tag, index, options = {})
     method    = options.delete(:method) || :text_field_tag
-    label     = tag.identifier.to_s.titleize
+    label     = tag.page.class.human_attribute_name(tag.identifier.to_s)
     css_class = tag.class.to_s.demodulize.underscore
     content   = ''
     
@@ -66,7 +66,7 @@ class ComfortableMexicanSofa::FormBuilder < ActionView::Helpers::FormBuilder
       'datetime'
     when ComfortableMexicanSofa::Tag::PageText, ComfortableMexicanSofa::Tag::FieldText
       'code'
-    when ComfortableMexicanSofa::Tag::PageRichText
+    when ComfortableMexicanSofa::Tag::PageRichText, ComfortableMexicanSofa::Tag::FieldRichText
       'rich_text'
     end
     
@@ -99,6 +99,10 @@ class ComfortableMexicanSofa::FormBuilder < ActionView::Helpers::FormBuilder
   end
   
   def field_text(tag, index)
+    default_tag_field(tag, index, :method => :text_area_tag)
+  end
+  
+  def field_rich_text(tag, index)
     default_tag_field(tag, index, :method => :text_area_tag)
   end
   

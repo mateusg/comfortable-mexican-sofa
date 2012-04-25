@@ -86,9 +86,10 @@ $.CMS = function(){
         if ($(element).hasClass('css'))  mode = 'css';
         if ($(element).hasClass('js'))   mode = 'javascript';
         CodeMirror.fromTextArea(element, {
-          htmlMode: true,
-          mode:     mode,
-          tabMode: 'indent'
+          htmlMode:     true,
+          mode:         mode,
+          tabMode:      'indent',
+          lineWrapping: true
         });
       });
     },

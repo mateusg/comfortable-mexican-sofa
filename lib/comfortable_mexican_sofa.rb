@@ -13,6 +13,7 @@ end
   'comfortable_mexican_sofa/view_methods',
   'comfortable_mexican_sofa/form_builder',
   'comfortable_mexican_sofa/tag',
+  'comfortable_mexican_sofa/sitemap',
   'comfortable_mexican_sofa/fixtures',
   'comfortable_mexican_sofa/extensions/rails',
   'comfortable_mexican_sofa/extensions/acts_as_tree',
@@ -55,6 +56,14 @@ module ComfortableMexicanSofa
       if ComfortableMexicanSofa.config.database_config && !Rails.env.test?
         klass.establish_connection "#{ComfortableMexicanSofa.config.database_config}_#{Rails.env}"
       end
+    end
+
+    def logger=(new_logger)
+      @logger = new_logger
+    end
+
+    def logger
+      @logger ||= Rails.logger
     end
     
   end
